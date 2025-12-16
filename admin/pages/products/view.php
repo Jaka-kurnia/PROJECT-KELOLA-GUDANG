@@ -40,7 +40,25 @@
                                 $sql = "SELECT * FROM products ORDER BY product_code ASC";
                                 $query = mysqli_query($koneksi, $sql);
                                 while ($products = mysqli_fetch_array($query)) {
-                                    echo $products['product_code'];
+                                ?>
+                                 <tr>
+                                     <td><?php echo $no ?></td>
+                                     <td><?php echo $products['product_code'] ?></td>
+                                     <td><?php echo $products['product_name'] ?></td>
+                                     <td><?php echo $products['category_id'] ?></td>
+                                     <td><?php echo $products['price'] ?></td>
+                                     <td><?php echo $products['stock'] ?></td>
+                                     <td>
+                                         <div class="d-flex">
+                                             <a href="" class="btn btn-sm  btn-warning mr-2">Edit</a>
+                                             <a href="" class="btn btn-sm  btn-danger">Hapus</a>
+                                         </div>
+                                     </td>
+
+                                 </tr>
+
+                             <?php
+                                    $no++;
                                 }
                                 ?>
                          </tbody>
