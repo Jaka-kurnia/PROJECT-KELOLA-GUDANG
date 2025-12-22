@@ -1,7 +1,11 @@
  <div class="content-header">
      <div class="container-fluid">
-         Add Products
-     </div>
+         <div class="row mb-2">
+             <div class="col-sm-6">
+                 <h1 class="m-0">Add Products</h1>
+             </div><!-- /.col -->
+         </div><!-- /.row -->
+     </div><!-- /.container-fluid -->
  </div>
  <!-- Main content -->
  <div class="content d-flex justify-content-center">
@@ -14,7 +18,7 @@
                          <input class="form-control mb-2" type="text" name="product_code" placeholder="Product Code" required>
                          <input class="form-control mb-2" type="text" name="product_name" placeholder="Product Name" required>
                          <select class="form-control mb-2" required name="category_id">
-                             <option >Choose Cateory</option>
+                             <option>Choose Cateory</option>
                              <?php
                                 $sql = "SELECT * FROM categories";
                                 $exceute = mysqli_query($koneksi, $sql);

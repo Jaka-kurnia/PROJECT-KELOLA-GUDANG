@@ -25,11 +25,8 @@ if (isset($_GET['act'])) {
             exit();
         }
 
-
-
-
-
-        $query = "INSERT INTO products (product_code, product_name, category_id, price, stock) VALUES ('$product_code', '$product_name', '$category_id', '$price', '$stock')";
+        $query = "INSERT INTO products (product_code, product_name, category_id, price, stock) 
+        VALUES ('$product_code', '$product_name', '$category_id', '$price', '$stock')";
         $execute = mysqli_query($koneksi, $query);
 
         if ($execute) {
@@ -67,6 +64,25 @@ if (isset($_GET['act'])) {
             exit();
         } else {
             $_SESSION['message'] = "Data gagal diupdate";
+            $_SESSION['alert_type'] = "alert-danger";
+            $_SESSION['type'] = "failed";
+            header('location:../../dashboard.php?page=products');
+            mysqli_close($koneksi);
+            exit();
+        }
+    } elseif ($act == "delete") {
+        $sql = "DELETE FROM products WHERE product_id='$_GET[product_id]'";
+        $execute = mysqli_query($koneksi, $sql);
+
+        if ($execute) {
+            $_SESSION['message'] = "Data berhasil dihapus";
+            $_SESSION['alert_type'] = "alert-success";
+            $_SESSION['type'] = "success";
+            header('location:../../dashboard.php?page=products');
+            mysqli_close($koneksi);
+            exit();
+        } else {
+            $_SESSION['message'] = "Data gagal dihapus";
             $_SESSION['alert_type'] = "alert-danger";
             $_SESSION['type'] = "failed";
             header('location:../../dashboard.php?page=products');

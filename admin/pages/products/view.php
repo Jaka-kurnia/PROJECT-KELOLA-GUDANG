@@ -1,7 +1,11 @@
  <div class="content-header">
      <div class="container-fluid">
-         Products
-     </div>
+         <div class="row mb-2">
+             <div class="col-sm-6">
+                 <h1 class="m-0"> Products</h1>
+             </div><!-- /.col -->
+         </div><!-- /.row -->
+     </div><!-- /.container-fluid -->
  </div>
  <!-- Main content -->
  <div class="content">
@@ -83,11 +87,12 @@
                              <td>
                                  <div class="d-flex justify-content-center">
                                      <a href="dashboard.php?page=editproduct&product_id=<?php echo $products['product_id'] ?>"
-                                     class="btn btn-sm  btn-warning mr-2 text-white">
+                                         class="btn btn-sm  btn-warning mr-2 text-white">
                                          <i class="fas fa-edit text-white"></i>
                                          Edit
                                      </a>
-                                     <a href="" class="btn btn-sm  btn-danger">
+                                     <a href="pages/products/action.php?act=delete&product_id=<?php echo $products['product_id'] ?>
+                                     " class="btn btn-sm  btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">
                                          <i class="fas fa-trash"></i>
                                          Hapus
                                      </a>
