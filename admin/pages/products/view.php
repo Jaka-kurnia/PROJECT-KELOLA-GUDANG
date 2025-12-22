@@ -82,8 +82,8 @@
                              <td><?php echo $products['stock'] ?></td>
                              <td>
                                  <div class="d-flex justify-content-center">
-                                     <a href="dashboard.php?page=editproduct&id=<?php echo $products['product_id'] ?>
-                                     "class="btn btn-sm  btn-warning mr-2 text-white">
+                                     <a href="dashboard.php?page=editproduct&product_id=<?php echo $products['product_id'] ?>"
+                                     class="btn btn-sm  btn-warning mr-2 text-white">
                                          <i class="fas fa-edit text-white"></i>
                                          Edit
                                      </a>

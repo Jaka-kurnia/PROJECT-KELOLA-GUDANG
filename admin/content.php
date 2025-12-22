@@ -11,6 +11,10 @@ if (isset($_GET['page'])) {
             case "addproduct":
                 include "pages/products/create.php";
                 break;
+
+        case "editproduct":
+            include "pages/products/edit.php";
+            break;
     }
     // Parameter Kostomer
     switch ($page) {
