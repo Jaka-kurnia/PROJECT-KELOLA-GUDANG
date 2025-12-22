@@ -12,10 +12,18 @@
      <div class="container-fluid">
          <section class="content">
              <div class="card">
-                 <div class="card-header">
-                     <i class="fas fa-plus"></i>
-                     <a href="dashboard.php?page=addproduct" type="button" class="btn  btn-primary">Tambah</a>
+                 <div class="card-header ">
+                     <div class="d-flex justify-content-between">
 
+                         <a href="dashboard.php?page=addproduct" type="button" class="btn  btn-primary">
+                             <i class="fas fa-plus"></i>
+                             Tambah
+                         </a>
+                         <a href="pages/products/print.php" class="btn  btn-success">
+                             <i class="fas fa-print"></i>
+                             Print
+                         </a>
+                     </div>
                      <div class="card-tools">
                          <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                              <i class="fas fa-minus"></i>
@@ -56,6 +64,25 @@
                             unset($_SESSION['message']);
                         }
                 ?>
+             <!-- Form input Filter -->
+             <form action="" method="GET">
+                 <input type="hidden" name="page" value="products">
+                 <div class="row">
+                     <div class="col-10">
+                         <input class="form-control mb-2 col-12" type="text" name="product_name" value="<?php if (isset($_GET['product_name'])) {
+                                                                                                            echo $_GET['product_name'];
+                                                                                                        } ?>"
+                             placeholder="Product Name">
+                     </div>
+                     <div class="col-2">
+                         <button type="submit" class="btn btn-sm btn-primary">
+                             <i class="fas fa-search"></i>
+                             Cari
+                         </button>
+                     </div>
+                 </div>
+             </form>
+
              <table class="table table-striped">
                  <thead>
                      <tr>
@@ -73,7 +100,11 @@
                         $no = 1;
                         // query inner join
                         $sql = "SELECT * FROM products INNER JOIN 
-                        categories ON products.category_id = categories.category_id ORDER BY product_code ASC";
+                        categories ON products.category_id = categories.category_id";
+                        if (isset($_GET['product_name'])) {
+                            $product_name = $_GET['product_name'];
+                            $sql .= " WHERE product_name LIKE '%$product_name%'";
+                        }
                         $query = mysqli_query($koneksi, $sql);
                         while ($products = mysqli_fetch_array($query)) {
                         ?>
