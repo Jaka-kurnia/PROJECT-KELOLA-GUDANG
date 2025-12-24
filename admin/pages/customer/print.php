@@ -17,7 +17,7 @@
         <section class="sheet padding-10mm">
 
           
-            <article>List Products</article>
+            <article>List Customer</article>
 
         </section>
 

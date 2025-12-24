@@ -2,7 +2,7 @@
      <div class="container-fluid">
          <div class="row mb-2">
              <div class="col-sm-6">
-                 <h1 class="m-0"> Products</h1>
+                 <h1 class="m-0"> Categories</h1>
              </div><!-- /.col -->
          </div><!-- /.row -->
      </div><!-- /.container-fluid -->
@@ -15,11 +15,11 @@
                  <div class="card-header ">
                      <div class="d-flex justify-content-between">
 
-                         <a href="dashboard.php?page=addproduct" type="button" class="btn  btn-primary">
+                         <a href="dashboard.php?page=addcategory" type="button" class="btn  btn-primary">
                              <i class="fas fa-plus"></i>
                              Tambah
                          </a>
-                         <a href="pages/products/print.php" class="btn  btn-success" target="_blank">
+                         <a href="pages/category/print.php" class="btn  btn-success" target="_blank">
                              <i class="fas fa-print"></i>
                              Print
                          </a>
@@ -66,7 +66,7 @@
                 ?>
              <!-- Form input Filter -->
              <form action="" method="GET">
-                 <input type="hidden" name="page" value="products">
+                 <input type="hidden" name="page" value="category">
                  <div class="row">
                      <div class="col-10">
                          <input class="form-control mb-2 col-12" type="text" name="product_name" value="<?php if (isset($_GET['product_name'])) {
@@ -87,11 +87,7 @@
                  <thead>
                      <tr>
                          <th style="width: 10px">No</th>
-                         <th>Code</th>
-                         <th>Product Name</th>
                          <th>Category</th>
-                         <th>Price</th>
-                         <th>Stok</th>
                          <th class="d-flex justify-content-center">Action</th>
                      </tr>
                  </thead>
@@ -99,30 +95,27 @@
                      <?php
                         $no = 1;
                         // query inner join
-                        $sql = "SELECT * FROM products INNER JOIN 
-                        categories ON products.category_id = categories.category_id";
-                        if (isset($_GET['product_name'])) {
-                            $product_name = $_GET['product_name'];
-                            $sql .= " WHERE product_name LIKE '%$product_name%'";
-                        }
+                        // $sql = "SELECT * FROM products INNER JOIN 
+                        // categories ON products.category_id = categories.category_id";
+                        // if (isset($_GET['product_name'])) {
+                        //     $product_name = $_GET['product_name'];
+                        //     $sql .= " WHERE product_name LIKE '%$product_name%'";
+                        // }
+                        $sql = "SELECT * FROM categories";
                         $query = mysqli_query($koneksi, $sql);
-                        while ($products = mysqli_fetch_array($query)) {
+                        while ($category = mysqli_fetch_array($query)) {
                         ?>
-                         <tr>
+                         <tr >
                              <td><?php echo $no ?></td>
-                             <td><?php echo $products['product_code'] ?></td>
-                             <td><?php echo $products['product_name'] ?></td>
-                             <td><?php echo $products['category_name'] ?></td>
-                             <td><?php echo $products['price'] ?></td>
-                             <td><?php echo $products['stock'] ?></td>
+                             <td class=""><?php echo $category['category_name'] ?></td>
                              <td>
                                  <div class="d-flex justify-content-center">
-                                     <a href="dashboard.php?page=editproduct&product_id=<?php echo $products['product_id'] ?>"
+                                     <a href="dashboard.php?page=editcategory&category_id=<?php echo $category['category_id'] ?>"
                                          class="btn btn-sm  btn-warning mr-2 text-white">
                                          <i class="fas fa-edit text-white"></i>
                                          Edit
                                      </a>
-                                     <a href="pages/products/action.php?act=delete&product_id=<?php echo $products['product_id'] ?>
+                                     <a href="pages/category/action.php?act=delete&category_id=<?php echo $category['category_id'] ?>
                                      " class="btn btn-sm  btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">
                                          <i class="fas fa-trash"></i>
                                          Hapus
@@ -141,3 +134,4 @@
      </section>
  </div>
  </div>
+ 

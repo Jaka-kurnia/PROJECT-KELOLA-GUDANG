@@ -74,9 +74,9 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="dashboard.php?page=suppliers" class="nav-link">
-                                 <i class="bi bi-people-fill text-lg"></i>
-                                 <p>suppliers</p>
+                             <a href="dashboard.php?page=categories" class="nav-link">
+                                 <i class="bi bi-list text-lg"></i>
+                                 <p>Categories</p>
                              </a>
                          </li>
                      </ul>

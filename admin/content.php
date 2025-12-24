@@ -21,11 +21,27 @@ if (isset($_GET['page'])) {
         case "customer":
             include "pages/customer/view.php";
             break;
+
+            case "addcustomer":
+                include "pages/customer/create.php";
+                break;
+
+        case "editcustomer":
+            include "pages/customer/edit.php";
+            break;
     }
-    // Paramete Suplier
+    // Paramete Kategori
     switch ($page) {
-        case "suppliers";
-            include "pages/suppliers/view.php";
+        case "categories";
+            include "pages/categories/view.php";
+            break;
+
+            case "addcategory";
+            include "pages/categories/create.php";
+            break;
+
+            case "editcategory";
+            include "pages/categories/edit.php";
             break;
     }
     // Parameter Sales
