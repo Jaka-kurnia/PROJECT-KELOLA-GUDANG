@@ -19,7 +19,7 @@
                              <i class="fas fa-plus"></i>
                              Tambah
                          </a>
-                         <a href="pages/category/print.php" class="btn  btn-success" target="_blank">
+                         <a href="pages/categories/print.php" class="btn  btn-success" target="_blank">
                              <i class="fas fa-print"></i>
                              Print
                          </a>
@@ -115,7 +115,7 @@
                                          <i class="fas fa-edit text-white"></i>
                                          Edit
                                      </a>
-                                     <a href="pages/category/action.php?act=delete&category_id=<?php echo $category['category_id'] ?>
+                                     <a href="pages/categories/action.php?act=delete&category_id=<?php echo $category['category_id'] ?>
                                      " class="btn btn-sm  btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">
                                          <i class="fas fa-trash"></i>
                                          Hapus

@@ -45,8 +45,8 @@
                     <input class="form-control mb-2" type="text" name="phone" placeholder="Phone" required value="<?php echo $customer['phone'] ?>">
                     <input class="form-control mb-2" type="text" name="customer_address" placeholder="Customer Address" required value="<?php echo $customer['customer_address'] ?>">
                     <div class="d-flex justify-content-end mt-3">
-                        <button class="btn btn-primary mr-2" type="submit">Save</button>
-                        <button type="reset" class="btn btn-danger">Reset</button>
+                        <button class="btn btn-warning mr-2 text-white" type="submit">Update</button>
+                        <!-- <button type="reset" class="btn btn-danger">Reset</button> -->
                     </div>
                 </form>
             </div>

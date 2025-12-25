@@ -14,7 +14,7 @@
              <div class="card">
                  <div class="card-body">
                      <h5>Add Category</h5>
-                     <form action="pages/category/action.php?act=insert" method="POST">
+                     <form action="pages/categories/action.php?act=insert" method="POST">
                          <input class="form-control mb-2" type="text" name="category_name" placeholder="Kategori" required>
                          <button type="submit" class="btn btn-sm btn-primary"> Submmit</button>
                          <button type="reset" class="btn btn-sm btn-danger"> Reset</button>

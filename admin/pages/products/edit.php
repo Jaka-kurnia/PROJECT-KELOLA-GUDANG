@@ -59,8 +59,8 @@
                     <input class="form-control mb-2" type="text" name="price" placeholder="Price" required value="<?php echo $product['price'] ?>">
                     <input class="form-control mb-2" type="text" name="stock" placeholder="Stock" required value="<?php echo $product['stock'] ?>">
                     <div class="d-flex justify-content-end mt-3">
-                        <button class="btn btn-primary mr-2" type="submit">Save</button>
-                        <button type="reset" class="btn btn-danger">Reset</button>
+                        <button class="btn btn-warning mr-2 text-white" type="submit">Update</button>
+                        <!-- <button type="reset" class="btn btn-danger">Reset</button> -->
                     </div>
                 </form>
             </div>

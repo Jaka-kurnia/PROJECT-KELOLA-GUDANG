@@ -17,48 +17,39 @@
             body {
                 background: none;
             }
-            table {
-                font-size: 11px;
-            }
         }
     </style>
 </head>
 
 <?php
 include '../../../config/koneksi.php';
-$query = "SELECT * FROM customers";
+$query = "SELECT * FROM categories";
 $execute = mysqli_query($koneksi, $query);
 ?>
 
-<body class="A5 landscape">
+<body class="A5">
 
 <section class="sheet padding-10mm">
 
     <div class="container-fluid">
 
-        <h4 class="text-center mb-4 fw-bold">List Customers</h4>
+        <h4 class="text-center mb-4 fw-bold">List Category</h4>
 
         <table class="table table-bordered table-striped table-sm">
             <thead class="table-primary text-center text-white">
                 <tr>
-                    <th width="5%">No</th>
-                    <th>Customer Code</th>
-                    <th>Customer Name</th>
-                    <th>Phone</th>
-                    <th>Address</th>
+                    <th width="10%">No</th>
+                    <th>Category Name</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 $no = 1;
-                while ($customer = mysqli_fetch_array($execute)) {
+                while ($category = mysqli_fetch_array($execute)) {
                 ?>
                     <tr>
                         <td class="text-center"><?php echo $no; ?></td>
-                        <td><?php echo $customer['customer_code']; ?></td>
-                        <td><?php echo $customer['customer_name']; ?></td>
-                        <td><?php echo $customer['phone']; ?></td>
-                        <td><?php echo $customer['customer_address']; ?></td>
+                        <td><?php echo $category['category_name']; ?></td>
                     </tr>
                 <?php
                     $no++;
