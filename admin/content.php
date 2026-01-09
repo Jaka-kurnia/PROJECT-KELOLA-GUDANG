@@ -1,3 +1,4 @@
+<!-- content.php -->
 <?php
 include "../config/koneksi.php";
 if (isset($_GET['page'])) {
